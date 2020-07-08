@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Experiment</title>
+
+
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var text = '{"Sentence1":[' +
+'{"Word1":"John","Word2":"ate","Word3":"an","Word4":"apple","Word5":"befor","Word6":"afternoon"},' +
+'{"Word1":"before","Word2":"afternoon","Word3":"John","Word4":"ate","Word5":"an","Word6":"apple" },' +
+'{"Word1":"John","Word2":"before","Word3":"afternoon","Word4":"ate","Word5":"an","Word6":"apple" }]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.Sentence1[1].Word1 + " " + obj.Sentence1[1].Word2+" "+obj.Sentence1[1].Word3 +" "obj.Sentence1[1].Word4 +" " obj.Sentence1[1].Word5+" "obj.Sentence1[1].Word6;
+</script>
+
+
+</body>
+</html>
