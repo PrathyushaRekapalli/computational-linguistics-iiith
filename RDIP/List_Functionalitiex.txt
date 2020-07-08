@@ -1,0 +1,16 @@
+This experiment is about Forming sentences.
+It contains Introduction, Theory, objective, Exeriment and Quizes links of different html files.
+Every  html file except experiment are description based.
+If we  pressed experiment link 
+we will get drop down of languages where we will have two options english and hindi.
+According to that we need to write the js file.
+After that we will get some words to be choosen to get a validate sentence and we need to check the validation sentences. 
+If our sentence is symentically correct then we will get as Right answer otherwise we will get as message as Wrong answer in this case we will get one more button to be selected to get the correct answers. And ther is one more functionality to be done that is reform sentence which is similar to reset.
+After doing all these functionalities seperately we need to join them in such a way it replicates the original experiment.
+1)Dropdown-Languages
+2)Getting random words
+3)Selection of random words
+4)Forming a sentence
+5)Checking the sentence with bunch of correct sentence
+6)Reforming sentence functionality
+7)Showing answer Functionality
