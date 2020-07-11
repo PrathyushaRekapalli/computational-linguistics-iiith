@@ -1,7 +1,11 @@
 <html>
 <head><title>index</title>
 	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'> 
 <link rel="stylesheet" href="style.css">
+
 <script type="text/javascript" src="assignment.js"></script></head>
 <body><center>
 	
@@ -22,9 +26,9 @@
 	    </ul>
          <h3 style="text-align: left; color:#002266; font-size: 40px;"> &nbsp;&nbsp;&nbsp;<b>Experiment</b></h3>
       <center>  <select id="language" name="language" style="width:30%;height:2%;font-size: 70%"onchange="select_language();">
-   <option value="null" >--Select Language--</option>
-  <option value="English" >English</option>
-  <option value="Hindi">Hindi</option>
+   <option value="null" onclick="reload();" >--Select Language--</option>
+  <option value="English" onclick="location.reload();">English</option>
+  <option value="Hindi" onclick="location.reload();">Hindi</option>
   
 </select>
 	 <h3 style="color:#00091a" id="demo1"></h3>
@@ -35,8 +39,8 @@
      	  <p style="color:blue" id="demo5"></p>
      	  <p style="color:blue" id="demo6"></p>
      	  <p style="color:blue" id="demo7"></p>
-     	  <p style="color:#0086b3" id="demo8"></p>
-     	  <p style="color:#0086b3" id="demo9"></p>
+     	  <p style="color:green" id="demo8"></p>
+     	  <p style="color:red" id="demo9"></p>
      	  <p style="color:#0047cc" id="demo10"></p>
     <p style="color:#4d4dff"id="output"></p>
 </center>

@@ -25,10 +25,15 @@ var comarray= ["राम और श्याम बाजार गयें","
 function select_language()
 {
 if (document.getElementById("language").value === "English")
+
 {
 	
-    
+	        
+               document.getElementById("demo5").innerHTML=" ";
+               document.getElementById("demo8").innerHTML=" ";
+               document.getElementById("demo9").innerHTML=" ";
                 answers="";
+                finalsentence="";
                 document.getElementById("output").innerHTML = ""
    
                 document.getElementById("demo2").innerHTML = "(select the buttons in proper order)"
@@ -54,8 +59,12 @@ if (document.getElementById("language").value === "English")
 }
 else if (document.getElementById("language").value === "Hindi")
 {
+	document.getElementById("language").options[1].disabled = true;
+	document.getElementById("demo5").innerHTML=" ";
+	 document.getElementById("demo8").innerHTML=" ";
+	 document.getElementById("demo9").innerHTML=" ";
                 answers="";
-                //alert("hi");
+                finalsentence="";
                 document.getElementById("output").innerHTML = ""
     
                 document.getElementById("demo2").innerHTML = "(select the buttons in proper order)"
@@ -79,6 +88,8 @@ else if (document.getElementById("language").value === "Hindi")
 else if (document.getElementById("language").value === "null")
 {
                 alert("Choose correct language")
+                document.getElementById("demo9").innerHTML=" ";
+                 document.getElementById("demo8").innerHTML=" ";
                 document.getElementById("demo2").innerHTML = ""
                 document.getElementById("demo1").innerHTML = ""
                 document.getElementById("demo3").innerHTML = ""
@@ -89,7 +100,7 @@ else if (document.getElementById("language").value === "null")
 var word_count;
 var button_count,r;
 var answers="";
-//comparing
+
 function compares(){
   
         var str= finalsentence.trim();
@@ -98,16 +109,19 @@ function compares(){
          console.log(i, str1.localeCompare(str), str, str.length, str1, str1.length)
         var n = str1.localeCompare(str);
         if (n == 0) {
-            document.getElementById('demo8').innerHTML = "RIGHT";
+            document.getElementById('demo8').innerHTML = "RIGHT ANSWER!!!";
             
             return;
         }
     }
-    document.getElementById('demo9').innerHTML = "WRONG";
-    document.getElementById("demo10").innerHTML = "<center><button id='showansbtn' onclick='gets()'>Get Correct Sentence</button></center>"
+    document.getElementById('demo9').innerHTML = "WRONG ANSWER!!!";
+    document.getElementById("demo10").innerHTML = "<center><button id='showansbtn' onclick='gets()'>Get Correct Sentence</button></center>";
+document.getElementById("language").options[1].disabled = false;
+document.getElementById("language").options[2].disabled = false;
+
 }
 
-//getting correct ans
+
 function gets(){
     
     answers="";
@@ -121,6 +135,7 @@ if (document.getElementById("language").value=='English'){
 			answers += "<center>"+array1[r][i]+"<br></center>"
 		}
 		document.getElementById("output").innerHTML = answers;
+		
 	}
     else if(document.getElementById("language").value=='Hindi'){
 		totalanswers = array2[r].length-1;
@@ -129,24 +144,20 @@ if (document.getElementById("language").value=='English'){
 			answers += "<center>"+array2[r][i]+"<br></center>"
 		}
 		document.getElementById("output").innerHTML = answers;
+		
 	}
    
 }
 
-//hiding
+
 function hides(){
-	document.getElementById('demo10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Correct Sentence</button></center>"
 	document.getElementById("output").innerHTML = "";
-}
-
-
-//togle
-function toggle(){
-    while(document.getElementById("output").innerHTML ==""){
+	document.getElementById('demo10').innerHTML = "<center><button id='showansbtn' onclick='gets()'>Get Correct Sentence</button></center>"
 	
-		document.getElementById('demo10').innerHTML = "<center><button id='showansbtn' onclick='hides()'>hide correct answer</button></center>"
-	}
 }
+
+
+
 
 
 function shuffle(jumbled){
@@ -177,13 +188,62 @@ function finals(id,value){
     
 }
 
-//reset option
 function resets(){
+	if(document.getElementById("language").value=="English")
+	{
+	var jumbled = array1[r][0];
+		var j = shuffle(jumbled);
+		button_count=0;
+        word_count=0;
+		var button ="";
+		var l_button = "";
+		for(i=0;i<=j.length-1;i++){
+			val = j[i];
+			button = "  <button id='btn"+i+"' onclick='finals(this.id,this.value)' value='"+val+"'>"+val+"</button>  ";
+			l_button +=button;
+            button_count++
+           
+		}
+		demo3.innerHTML = l_button.trim();
+    }
+    else if(document.getElementById('language').value=="Hindi")
+    {
+    	var jumbled = array2[r][0];
+		var j = shuffle(jumbled);
+		 button_count=0;
+    word_count=0;
+		var button ="";
+		var l_button = "";
+		for(i=0;i<=j.length-1;i++){
+			val = j[i];
+			button= "  <button id='btn"+i+"'onclick='finals(this.id,this.value)' value='"+val+"'>"+val+"</button>  ";
+			l_button+=button;
+            button_count++;
+		}
+		demo3.innerHTML = l_button.trim();
+    	var jumbled = array2[r][0];
+		var j = shuffle(jumbled);
+		 button_count=0;
+    word_count=0;
+		var button ="";
+		var l_button = "";
+		for(i=0;i<=j.length-1;i++){
+			val = j[i];
+			button= "  <button id='btn"+i+"'onclick='finals(this.id,this.value)' value='"+val+"'>"+val+"</button>  ";
+			l_button+=button;
+            button_count++;
+		}
+		demo3.innerHTML = l_button.trim();
+
+    }
+    finalsentence="";
   
 	document.getElementById("demo5").innerHTML = "";
-		
+	document.getElementById("demo9").innerHTML=" ";
+	 document.getElementById("demo8").innerHTML=" ";
     document.getElementById("demo6").innerHTML ="";
 	document.getElementById("demo4").innerHTML = "";
+	document.getElementById("output").innerHTML="";
     word_count=0;
 }
 
