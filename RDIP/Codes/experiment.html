@@ -92,7 +92,7 @@ h1
 
 </style>
 <script type="text/javascript" src="assignment.js"></script></head>
-<center><body>
+<body><center>
 	
 	<img class="start" src="logo.jpg"></tr>
 	
@@ -111,17 +111,26 @@ h1
 		<li><a style="color:#2d5986;font-size: 20px; text-decoration-line:underline; float:left;"href="quizzes.html"><img src="quizzes.jpg"><br>QUIZZES</a></li>
 	    </ul>
          <h3 style="text-align: left; color:black"> &nbsp;&nbsp;&nbsp;<b>Experiment</b></h3>
-       <center>  <select id="language" name="language" >
-   <option value="null">--Select Language--</option>
-  <option value="English" onclick="select_language();">English</option>
-  <option value="Hindi" onclick="select_language();">Hindi</option>
+      <center>  <select id="language" name="language" onchange="select_language(); reload();">
+   <option value="null" >--Select Language--</option>
+  <option value="English" >English</option>
+  <option value="Hindi">Hindi</option>
   
 </select>
-	
 	 <h2 style="color:blue" id="demo"></h2>
 	 <h3 style="color:blue" id="demo1"></h3>
-     <p style="color:blue" id="demo3"></p>
+     <p style="color:blue" id="demo2"></p>
+
+     	 <p style="color:blue" id="demo3"></p>
+     	 <p style="color:blue" id="demo4"></p>
+     	  <p style="color:blue" id="demo5"></p>
+     	  <p style="color:blue" id="demo6"></p>
+     	  <p style="color:blue" id="demo7"></p>
+     	  <p style="color:blue" id="demo8"></p>
+     	  <p style="color:blue" id="demo9"></p>
+     	  <p style="color:blue" id="demo10"></p>
+    <p id="output"></p>
 </center>
 </div>
-		
-</body></center>
+</center>	
+</body>
