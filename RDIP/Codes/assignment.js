@@ -97,12 +97,12 @@ function compares(){
          console.log(i, str1.localeCompare(str), str, str.length, str1, str1.length)
         var n = str1.localeCompare(str);
         if (n == 0) {
-            document.getElementById('demo8').innerHTML = "RIGHT";
+            document.getElementById('demo8').innerHTML = " RIGHT";
             
             return;
         }
     }
-    document.getElementById('demo9').innerHTML = "WRONG";
+    document.getElementById('demo9').innerHTML = " WRONG";
     
 }
 
