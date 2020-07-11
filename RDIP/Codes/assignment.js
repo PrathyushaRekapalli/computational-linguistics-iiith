@@ -59,7 +59,7 @@ if (document.getElementById("language").value === "English")
 }
 else if (document.getElementById("language").value === "Hindi")
 {
-	document.getElementById("language").options[1].disabled = true;
+	
 	document.getElementById("demo5").innerHTML=" ";
 	 document.getElementById("demo8").innerHTML=" ";
 	 document.getElementById("demo9").innerHTML=" ";
