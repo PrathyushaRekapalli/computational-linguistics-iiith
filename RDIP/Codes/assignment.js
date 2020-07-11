@@ -89,6 +89,7 @@ else if (document.getElementById("language").value === "null")
 var word_count;
 var button_count,r;
 var answers="";
+//comparing
 function compares(){
   
         var str= finalsentence.trim();
@@ -97,15 +98,40 @@ function compares(){
          console.log(i, str1.localeCompare(str), str, str.length, str1, str1.length)
         var n = str1.localeCompare(str);
         if (n == 0) {
-            document.getElementById('demo8').innerHTML = " RIGHT";
+            document.getElementById('demo8').innerHTML = "RIGHT";
             
             return;
         }
     }
-    document.getElementById('demo9').innerHTML = " WRONG";
-    
+    document.getElementById('demo9').innerHTML = "WRONG";
+    document.getElementById("demo10").innerHTML = "<center><button id='showansbtn' onclick='gets()'>Get Correct Sentence</button></center>"
 }
 
+//getting correct ans
+function gets(){
+    
+    answers="";
+    document.getElementById("output").innerHTML = ""
+    var totalanswers = 0;
+	
+if (document.getElementById("language").value=='English'){
+		totalanswers = array1[r].length-1;
+		document.getElementById('demo10').innerHTML = "<center><button id='showansbtn' onclick='hides()'>hide correct answer</button></center>"
+		for(i=0;i<=totalanswers;i++){
+			answers += "<center>"+array1[r][i]+"<br></center>"
+		}
+		document.getElementById("output").innerHTML = answers;
+	}
+    else if(document.getElementById("language").value=='Hindi'){
+		totalanswers = array2[r].length-1;
+		document.getElementById('demo10').innerHTML = "<center><button id='showansbtn' onclick='hides()'>hide correct answer</button></center>"
+		for(i=0;i<=totalanswers;i++){
+			answers += "<center>"+array2[r][i]+"<br></center>"
+		}
+		document.getElementById("output").innerHTML = answers;
+	}
+   
+}
 
 //hiding
 function hides(){
@@ -150,8 +176,8 @@ function finals(id,value){
     }
     
 }
-    
 
+//reset option
 function resets(){
   
 	document.getElementById("demo5").innerHTML = "";
@@ -160,4 +186,5 @@ function resets(){
 	document.getElementById("demo4").innerHTML = "";
     word_count=0;
 }
+
 
