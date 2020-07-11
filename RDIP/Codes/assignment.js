@@ -89,6 +89,22 @@ else if (document.getElementById("language").value === "null")
 var word_count;
 var button_count,r;
 var answers="";
+function compares(){
+  
+        var str= finalsentence.trim();
+    for(let i=0;i<comarray.length;i++){
+        var str1 = comarray[i];
+         console.log(i, str1.localeCompare(str), str, str.length, str1, str1.length)
+        var n = str1.localeCompare(str);
+        if (n == 0) {
+            document.getElementById('demo8').innerHTML = "RIGHT";
+            
+            return;
+        }
+    }
+    document.getElementById('demo9').innerHTML = "WRONG";
+    
+}
 
 
 //hiding
@@ -129,8 +145,13 @@ function finals(id,value){
 	document.getElementById(id).style.display = "none";
 	document.getElementById("demo6").innerHTML = "<center><button id='reform' onclick='resets()'>Re-form the sentence</button></center>"
     word_count++;
+    if(button_count==word_count){
+		document.getElementById("demo7").innerHTML = "<center><button id='correctness'  onclick='compares()'>Check the correctness</button></center>"
+    }
     
 }
+    
+
 function resets(){
   
 	document.getElementById("demo5").innerHTML = "";
