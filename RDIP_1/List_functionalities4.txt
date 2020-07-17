@@ -1,0 +1,7 @@
+1.Select corpus from selection box.
+2.On selecting particular corpus you will get that particular corpus on the screen.
+3.Then we will get 2 text boxes to enter data i.e, no.of tokens and types.
+4.If we give wrong data it chnage text boxes to red colour and display as wrong and if we gave correct input then it will display as correct.
+5.Next we need to reduce this corpus with help of stemmer and reduce it.
+6.And then calculate total types and give it as input if it is correct it will show it as correct.
+These are the different functionalities to be worked in this experiment.
