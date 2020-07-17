@@ -8,6 +8,7 @@ function select_corpus()
 	{
 		document.getElementById('demo3').innerHTML=" ";
 		document.getElementById('demo4').innerHTML=" "; 
+		document.getElementById("demo5").innerHTML=" ";
 		document.getElementById("demo1").innerHTML=c[0];
 		
 	}
@@ -15,12 +16,14 @@ function select_corpus()
 	{
 		document.getElementById('demo3').innerHTML=" "; 
 		document.getElementById('demo4').innerHTML=" "; 
+		document.getElementById("demo5").innerHTML=" ";
 		document.getElementById("demo1").innerHTML=c[1];
 	}
 	else if(document.getElementById("corpus").value==="Corpus-3")
 	{
 		document.getElementById('demo3').innerHTML=" "; 
-		document.getElementById('demo4').innerHTML=" "; 
+		document.getElementById('demo4').innerHTML=" ";
+		document.getElementById("demo5").innerHTML=" "; 
 		document.getElementById("demo1").innerHTML=c[2];
 	}
 	document.getElementById("demo2").innerHTML="Enter the number of tokens and types for the above corpus:"+'<br><table bordercolor:="#d2e0e0" border="1" style="border-collapse:collapse;text-align:ceter;"><tr><td style="padding:15px; font-size:20px;">#tokens:</td><td style="padding:15px;"><input type="text" size="5" id="text1"></td></tr><tr><td style="padding:15px;font-size:20px;">#types:</td><td style="padding:15px;"><input type="text" size="5" id="text2"></td></tr></table><br><br>';
@@ -170,4 +173,49 @@ function next()
 	document.getElementById("demo6").innerHTML=" ";
     document.getElementById("demo4").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."+'<br><br>#new types:<br><input type="text" id="text3" size="7"><br><br><input type="submit" id="submit2" value="submit" style="padding:10px; font-size:20px;" onclick="number_next();">';
 
+}
+var stemmer = new Snowball('English');
+stemmer.setCurrent('abbreviations');
+stemmer.stem();
+console.log(stemmer.getCurrent());
+function number_next()
+{
+	newtypecount = document.getElementById('text3').value;
+	var result ="";
+	if(document.getElementById("corpus").value==="Corpus-1")
+		result = c[0];
+	if(document.getElementById("corpus").value==="Corpus-2")
+		result = c[1];
+	if(document.getElementById("corpus").value==="Corpus-3")
+		result = c[2];
+	result = result.replace(/[^a-zA-Z ]/g, "");
+	result = result.toLowerCase();
+	var result1 = result.split(' ');
+	var str = [];
+	var j=0;
+	for(i=0 ; i<result1.length ; i++){
+		if(result1[i]=='the' || result1[i]=='of' || result1[i]=='to' || result1[i]=='very' || result1[i]=='does'  || result1[i]=='off' || result1[i]=='me' || result1[i]=='you' || result1[i]=='up' || result1[i]=='can' || result1[i]=='than' || result1[i]=='did'){
+			continue;
+		}
+		else{
+			stemmer.setCurrent(result1[i]);
+			stemmer.stem();
+			str[j] = stemmer.getCurrent();
+			j++;
+		}
+	}
+	str = new Set(str);
+	str = Array.from(str);
+
+
+if(document.getElementById('text3').value==str.length)
+{
+	document.getElementById("demo5").innerHTML="Right Answer!!".fontcolor("green");
+	document.getElementById('text3').style.backgroundColor = "Green";
+}
+else
+{
+	document.getElementById("demo5").innerHTML="Wrong Answer!!".fontcolor("red");
+	document.getElementById('text3').style.backgroundColor = "Red";
+}
 }
