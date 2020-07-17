@@ -26,8 +26,21 @@ function select_corpus()
 		document.getElementById("demo5").innerHTML=" "; 
 		document.getElementById("demo1").innerHTML=c[2];
 	}
+	else if(document.getElementById("corpus").value="null")
+	{ 
+		document.getElementById('demo3').innerHTML=" "; 
+		document.getElementById('demo4').innerHTML=" ";
+		document.getElementById("demo5").innerHTML=" ";
+		document.getElementById("demo6").innerHTML=" ";
+		document.getElementById("demo2").innerHTML=" ";
+		document.getElementById("demo1").innerHTML=" ";
+		//alert('please enter valid input');
+	}
+	if(document.getElementById("corpus").value!="null")
+	{
 	document.getElementById("demo2").innerHTML="Enter the number of tokens and types for the above corpus:"+'<br><table bordercolor:="#d2e0e0" border="1" style="border-collapse:collapse;text-align:ceter;"><tr><td style="padding:15px; font-size:20px;">#tokens:</td><td style="padding:15px;"><input type="text" size="5" id="text1"></td></tr><tr><td style="padding:15px;font-size:20px;">#types:</td><td style="padding:15px;"><input type="text" size="5" id="text2"></td></tr></table><br><br>';
 	document.getElementById('demo6').innerHTML='<input type="submit" value="submit" id="submit1" style="padding:10px; font-size:20px;" onclick=number();>';
+   }
 }
 
 
@@ -206,9 +219,12 @@ function number_next()
 	}
 	str = new Set(str);
 	str = Array.from(str);
+	compare(str.length);
+}
 
-
-if(document.getElementById('text3').value==str.length)
+function compare(count)
+{
+if(document.getElementById('text3').value==count)
 {
 	document.getElementById("demo5").innerHTML="Right Answer!!".fontcolor("green");
 	document.getElementById('text3').style.backgroundColor = "Green";
