@@ -87,5 +87,5 @@ rows += "<tr><td style='padding:10px'>"+stringE[i]+"</td><td style='padding:10px
 	}
 }
 document.getElementById("demo3").innerHTML = '<center><table border="1" style="border-collapse:collapse;border-color:#b3cccc; font-size:20px;"; color:#334d4d"><tr style="color:#4d0000;"><th style="padding:10px">LEXICON</th><th style="padding:10px;">POS</th><th style="padding:10px"></th><th style="padding:10px"></th></tr><tr></td></tr>'+ rows + '</table></center>';
-
+document.getElementById("demo4").innerHTML="<br><center><input style='padding:10px;font-size:20px;' type='submit' value='submit' onclick='check();'></center><br>";
 }
