@@ -50,7 +50,7 @@ if(document.getElementById("language").value=='English')
 		var rows=" ";
 	for(var i=0;i<stringE.length;i++)
 	{
-rows += "<tr><td style='padding:10px'>"+stringE[i]+"</td><td style='padding:10px'><select><option value = 'Noun' selected>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+rows += "<tr><td style='padding:10px'>"+stringE[i]+"</td><td style='padding:10px'><select style='width:130px;height:25px;font-size: 20px;'><option value = 'Noun' selected>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Postposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 	}
 }
 else if(document.getElementById("language").value=='Hindi')
@@ -83,9 +83,9 @@ else if(document.getElementById("language").value=='Hindi')
 		var rows=" ";
 	for(var i=0;i<stringE.length;i++)
 	{
-rows += "<tr><td style='padding:10px'>"+stringE[i]+"</td><td style='padding:10px'><select><option value = 'Noun' selected>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+rows += "<tr><td style='padding:10px'>"+stringE[i]+"</td><td style='padding:10px'><select style='width:130px;height:25px;font-size: 20px;'><option value = 'Noun' selected>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 	}
 }
-document.getElementById("demo3").innerHTML = '<center><table border="1" style="border-collapse:collapse; "><tr style="color:red;"><th style="padding:10px">LEXICON</th><th style="padding:10px">POS</th><th style="padding:10px"></th><th style="padding:10px"></th></tr><tr></td></tr>'+ rows + '</table></center>';
+document.getElementById("demo3").innerHTML = '<center><table border="1" style="border-collapse:collapse;border-color:#b3cccc; font-size:20px;"; color:#334d4d"><tr style="color:#4d0000;"><th style="padding:10px">LEXICON</th><th style="padding:10px;">POS</th><th style="padding:10px"></th><th style="padding:10px"></th></tr><tr></td></tr>'+ rows + '</table></center>';
 
 }
