@@ -89,3 +89,31 @@ rows += "<tr><td style='padding:10px'>"+stringE[i]+"</td><td style='padding:10px
 document.getElementById("demo3").innerHTML = '<center><table border="1" style="border-collapse:collapse;border-color:#b3cccc; font-size:20px;"; color:#334d4d"><tr style="color:#4d0000;"><th style="padding:10px">LEXICON</th><th style="padding:10px;">POS</th><th style="padding:10px"></th><th style="padding:10px"></th></tr><tr></td></tr>'+ rows + '</table></center>';
 document.getElementById("demo4").innerHTML="<br><center><input style='padding:10px;font-size:20px;' type='submit' value='submit' onclick='check();'></center><br>";
 }
+
+
+function check()
+{
+
+var pos = require('pos');
+var words = new pos.Lexer().lex(tstring);
+var tagger = new pos.Tagger();
+var taggedWords = tagger.tag(words);
+var i=0;
+for (var i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+    console.log(word + " /" + tag);
+    //alert(tag);
+    
+    
+}
+
+/*const Tag = require("en-pos").Tag;
+var tags = new Tag(["this","is","my","sentence"])
+.initial() // initial dictionary and pattern based tagging
+.smooth() // further context based smoothing
+.tags;
+console.log(tags);*/
+	
+}
